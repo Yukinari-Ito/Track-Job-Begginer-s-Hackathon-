@@ -4,3 +4,6 @@ class choices_made():
     
     def save_choice(self, key, value):
         self.choices_dict[key] = value
+
+    def return_choices(self):
+        return self.choices_dict
