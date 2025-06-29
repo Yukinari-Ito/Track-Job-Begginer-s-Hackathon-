@@ -140,6 +140,7 @@ def show_question_select():
             rerun()
 
 def show_loading():
+        st.empty()
         spinner_html = """
         <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
         <div style="text-align: center;">
@@ -169,7 +170,7 @@ def show_loading():
         placeholder.markdown(spinner_html, unsafe_allow_html=True)
 
         # 擬似的な処理時間
-        time.sleep(5)
+        time.sleep(3)
 
         # 処理完了後にスピナーを消して別の内容を表示
         placeholder.empty()
