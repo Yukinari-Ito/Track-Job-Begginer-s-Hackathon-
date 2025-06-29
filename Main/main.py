@@ -80,6 +80,7 @@ def show_example():
 
 
 def show_question_select():
+    placeholder = st.empty()
     if 'questions' not in st.session_state:
         st.session_state.questions = shuffled_selection_values()
         st.session_state.question_keys = list(st.session_state.questions.keys())
@@ -90,15 +91,22 @@ def show_question_select():
     current = st.session_state.current_q_idx
 
     display_idx = min(current + 1, total_questions)
-    st.markdown(f"## 質問 {display_idx} / {total_questions}")
-
-    progress_ratio = display_idx / total_questions
-    progress_html = f"""
-    <div style='width:100%; background:#e0e0e0; height:20px; border-radius:10px;'>
-        <div style='width:{progress_ratio*100}%; background:#FF4B4B; height:20px; border-radius:10px;'></div>
-    </div>
-    """
-    st.markdown(progress_html, unsafe_allow_html=True)
+    with placeholder.container():
+        if current < total_questions:
+            st.markdown(f"## 質問 {display_idx} / {total_questions}")
+            progress_ratio = display_idx / total_questions
+            progress_html = f"""
+            <div style='width:100%; background:#e0e0e0; height:20px; border-radius:10px;'>
+                <div style='width:{progress_ratio*100}%; background:#FF4B4B; height:20px; border-radius:10px;'></div>
+            </div>
+            """
+            st.markdown(progress_html, unsafe_allow_html=True)
+        else:
+            st.markdown("全て回答しました")
+            if st.button("結果を診断する"):
+                placeholder.empty()
+                st.session_state.page = 'loading'
+                rerun() 
 
     if current < total_questions:
         key = st.session_state.question_keys[current]
@@ -135,12 +143,6 @@ def show_question_select():
 
         with col3:
             st.markdown(f"<p style='text-align:center; font-size:18px; color:#4BA3FF;'>{right_label}</p>", unsafe_allow_html=True)
-
-    else:
-        st.markdown("全て回答しました")
-        if st.button("結果を診断する"):
-            st.session_state.page = 'loading'
-            rerun()
 
 def show_loading():
         st.empty()
