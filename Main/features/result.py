@@ -45,14 +45,14 @@ def diagnosis_type(diagnosis):
 def diagnosis_sentences(diagnosis_type):
     if diagnosis_type == "BCS":
         return """
-        <div style="text-align:left; font-size:18px; color:#dddddd; max-width:700px; margin:auto;">
-        <p style="text-align:center;">あなたは、美学と毒を宿す “静かな異端者” タイプ</p>
+        <p style="text-align:center; font-size:18px;">あなたは、美学と毒を宿す “静かな異端者” タイプ</p>
+        <div style="text-align:left; font-size:18px; width:100vw; margin:auto;">
         <br>
         <h5>◆ あなたの特徴：</h5>
         <p>　笑いに対して、ただの娯楽ではなく哲学や美意識を求めているタイプ。</p>
         <p>　表面的なネタよりも、「これはなにかを風刺している」と感じるズレや沈黙に価値を見出す。</p>
         <p>　誰かを貶すよりも、“世界そのもののおかしさ”を描くような笑いに惹かれる。</p>
-        <p>　ブラックなテーマ（死・狂気・矛盾）× 洗練された構成 × 意味不明さに、静かにハマる感性の持ち主。</p>
+        <p>　ブラックなテーマ× 洗練された構成 × 意味不明さに、静かにハマる感性の持ち主。</p>
         <br>
         <h5>◆ あなたが惹かれるもの：</h5>
         <p>　一見不条理で意味不明なのに、よく考えるとゾッとするほど的を射ている構成</p>
@@ -60,12 +60,12 @@ def diagnosis_sentences(diagnosis_type):
         <p>　芸人自身が“まともじゃない”世界観の中で正気のふりをしている異常性</p>
         <br>
         <h5>◆ あなたにぴったりの芸人は：</h5>
-        <p>　ラーメンズ（小林賢太郎）</p>
-        <p>　┗ 完全な世界観構築と緻密な言葉遊びで、不条理と美を両立。</p>
-        <p>　バカリズム</p>
-        <p>　┗ 一見普通の話の中に毒と違和感が潜む、知性と闇の融合。</p>
-        <p>　シティボーイズ</p>
-        <p>　┗ 言語感覚、空気、ズレの演出…“笑い”と“芸術”の境界線に立つ伝説的ユニット。</p>
+        <p>　ラーメンズ（小林賢太郎）<br>
+           　┗ 完全な世界観構築と緻密な言葉遊びで、不条理と美を両立。</p>
+        <p>　バカリズム<br>
+           　┗ 一見普通の話の中に毒と違和感が潜む、知性と闇の融合。</p>
+        <p>　シティボーイズ<br>
+           　┗ 言語感覚、空気、ズレの演出…“笑い”と“芸術”の境界線に立つ伝説的ユニット。</p>
         <br>
         <h5>◆ ひとこと診断：</h5>
         <p>　「あなたにとって笑いとは、“現実をねじって可視化するレントゲン”。</p>
@@ -76,8 +76,8 @@ def diagnosis_sentences(diagnosis_type):
         """
     elif diagnosis_type == "BCG":
         return """
-        <div style="text-align:left; font-size:18px; color:#dddddd; max-width:700px; margin:auto;">
-        <p style="text-align:center;">あなたは、毒と洗練を武器にする“本質直撃タイプ”</p>
+        <p style="text-align:center; font-size:18px;">あなたは、毒と洗練を武器にする“本質直撃タイプ”</p>
+        <div style="text-align:left; font-size:18px; width: 100vw; margin:auto;">
         <br>
         <h5>◆ あなたの特徴：</h5>
         <p>　本音と建前を見抜く目を持ち、「笑いの裏側にある真実」に強く惹かれるタイプ。</p>
@@ -91,12 +91,12 @@ def diagnosis_sentences(diagnosis_type):
         <p>　ストレートな構成の中に宿る、高度なセンスと哲学</p>
         <br>
         <h5>◆ あなたにぴったりの芸人は：</h5>
-        <p>　松本人志（初期ダウンタウン）</p>
-        <p>　┗ 毒・センス・直球すべての祖。</p>
-        <p>　バカリズム</p>
-        <p>　┗ ミニマルな構成で、刺さる一撃を見せる芸風。</p>
-        <p>　シソンヌ（長谷川）</p>
-        <p>　┗ ストーリーの裏にある毒を、繊細な演技と構成で魅せる。</p>
+        <p>　松本人志（初期ダウンタウン）<br>
+           　┗ 毒・センス・直球すべての祖。</p>
+        <p>　バカリズム<br>
+           　┗ ミニマルな構成で、刺さる一撃を見せる芸風。</p>
+        <p>　シソンヌ（長谷川）<br>
+           　┗ ストーリーの裏にある毒を、繊細な演技と構成で魅せる。</p>
         <br>
         <h5>◆ ひとこと診断：</h5>
         <p>　「あなたにとって笑いとは、“知性をまとった暴力”かもしれません。</p>
@@ -105,12 +105,12 @@ def diagnosis_sentences(diagnosis_type):
         """
     elif diagnosis_type == "BRS":
         return """
-        <div style="text-align:left; font-size:18px; color:#dddddd; max-width:700px; margin:auto;">
-        <p style="text-align:center;">あなたは、混沌を楽しむ“異端の芸術家タイプ”</p>
+        <p style="text-align:center; font-size:18px;">あなたは、混沌を楽しむ“異端の芸術家タイプ”</p>
+        <div style="text-align:left; font-size:18px; width: 100vw; margin:auto;">
         <br>
         <h5>◆ あなたの特徴：</h5>
         <p>　「何それ…でも笑っちゃう…」という、説明不能な笑いの魅力を誰よりも理解しているタイプ。</p>
-        <p>　ブラックなテーマ（死・狂気・不条理）さえも、身体と反射神経で笑いに変える芸に心惹かれる。</p>
+        <p>　ブラックなテーマさえも、身体と反射神経で笑いに変える芸に心惹かれる。</p>
         <p>　常識や整合性に縛られず、感覚や勢い、世界観そのものを味わう芸風を愛する。</p>
         <p>　他人からは「なんでそれが面白いの？」と言われがちだが、自分の“笑いセンサー”に確信がある。</p>
         <br>
@@ -120,12 +120,12 @@ def diagnosis_sentences(diagnosis_type):
         <p>　「笑っていいのかわからないけど笑える」――その絶妙な境界線</p>
         <br>
         <h5>◆ あなたにぴったりの芸人は：</h5>
-        <p>　くっきー！（野性爆弾）</p>
-        <p>　┗ 死・宗教・生理・芸術すらもネタにする異常センスと身体性。</p>
-        <p>　江頭2:50</p>
-        <p>　┗ 全身を使ったリアクションと社会への過激な皮肉が融合。</p>
-        <p>　クロちゃん</p>
-        <p>　┗ 不快・狂気・痛烈なリアクション、すべてが「不条理」な笑いに昇華。</p>
+        <p>　くっきー！（野性爆弾）<br>
+           　┗ブラックなテーマをネタにする異常センスと身体性。</p>
+        <p>　江頭2:50<br>
+           　┗ 全身を使ったリアクションと社会への過激な皮肉が融合。</p>
+        <p>　クロちゃん<br>
+           　┗ 不快・狂気・痛烈なリアクション、すべてが「不条理」な笑いに昇華。</p>
         <br>
         <h5>◆ ひとこと診断：</h5>
         <p>　「あなたにとって笑いとは、“言葉を超えた混沌のアート”。</p>
@@ -134,8 +134,8 @@ def diagnosis_sentences(diagnosis_type):
         """
     elif diagnosis_type == "BRG":
         return """
-        <div style="text-align:left; font-size:18px; color:#dddddd; max-width:700px; margin:auto;">
-        <p style="text-align:center;">あなたは、“本能で真実を暴く、激情の観察者”タイプ</p>
+        <p style="text-align:center; font-size:18px;">あなたは、“本能で真実を暴く、激情の観察者”タイプ</p>
+        <div style="text-align:left; font-size:18px; width: 100vw; margin:auto;">
         <br>
         <h5>◆ あなたの特徴：</h5>
         <p>　笑いに求めるのは、遠回しな言い回しじゃない。ズドンと本音。</p>
@@ -149,12 +149,12 @@ def diagnosis_sentences(diagnosis_type):
         <p>　毒をまっすぐに投げてくる芸人の“説得力”</p>
         <br>
         <h5>◆ あなたにぴったりの芸人は：</h5>
-        <p>　松本人志（ダウンタウン）</p>
-        <p>　┗ 毒と本音を、勢いと鋭さでぶつける。リアクションでも表情が豊か。</p>
-        <p>　有吉弘行</p>
-        <p>　┗ ストレートで切れ味鋭いブラックジョーク。笑いに遠慮がない。</p>
-        <p>　江頭2:50</p>
-        <p>　┗ 激しさ×ストレート×社会風刺。リアクションで本音を叫び続ける芸風。</p>
+        <p>　松本人志（ダウンタウン）<br>
+           　┗ 毒と本音を、勢いと鋭さでぶつける。リアクションでも表情が豊か。</p>
+        <p>　有吉弘行<br>
+           　┗ ストレートで切れ味鋭いブラックジョーク。笑いに遠慮がない。</p>
+        <p>　江頭2:50<br>
+           　┗ 激しさ×ストレート×社会風刺。リアクションで本音を叫び続ける芸風。</p>
         <br>
         <h5>◆ ひとこと診断：</h5>
         <p>　「あなたにとって笑いとは、“真実をむき出しにする爆弾”。</p>
@@ -163,8 +163,8 @@ def diagnosis_sentences(diagnosis_type):
         """
     elif diagnosis_type == "WCS":
         return """
-        <div style="text-align:left; font-size:18px; color:#dddddd; max-width:700px; margin:auto;">
-        <p style="text-align:center;"> あなたは、静かな違和感に微笑む “感性派ナチュラリスト” タイプ</p>
+        <p style="text-align:center; font-size:18px;"> あなたは、静かな違和感に微笑む “感性派ナチュラリスト” タイプ</p>
+        <div style="text-align:left; font-size:18px; width: 100vw; margin:auto;">
         <br>
         <h5>◆ あなたの特徴：</h5>
         <p>　派手な刺激よりも、「じわじわくる違和感」にこそ本物のユーモアを感じるタイプ。</p>
@@ -178,12 +178,12 @@ def diagnosis_sentences(diagnosis_type):
         <p>　「なんか変だけど、嫌いじゃない」――そんな余白のある笑い</p>
         <br>
         <h5>◆ あなたにぴったりの芸人は：</h5>
-        <p>　ラーメンズ（小林賢太郎）</p>
-        <p>　┗ 日常と非日常の境界で織りなす、美しい不条理と温かみ。</p>
-        <p>　東京03</p>
-        <p>　┗ 丁寧な構成と人間関係のズレが生み出す、やさしい笑い。</p>
-        <p>　シソンヌ</p>
-        <p>　┗ 静かに狂った人々を演じきる、品と狂気のバランス。</p>
+        <p>　ラーメンズ（小林賢太郎）<br>
+           　┗ 日常と非日常の境界で織りなす、美しい不条理と温かみ。</p>
+        <p>　東京03<br>
+           　┗ 丁寧な構成と人間関係のズレが生み出す、やさしい笑い。</p>
+        <p>　シソンヌ<br>
+           　┗ 静かに狂った人々を演じきる、品と狂気のバランス。</p>
         <br>
         <h5>◆ ひとこと診断：</h5>
         <p>「あなたにとって笑いとは、“言葉にならない空気を読む芸術”。</p>
@@ -192,8 +192,8 @@ def diagnosis_sentences(diagnosis_type):
         """
     elif diagnosis_type == "WCG":
         return """
-        <div style="text-align:left; font-size:18px; color:#dddddd; max-width:700px; margin:auto;">
-        <p style="text-align:center;"> あなたは、やさしさとスマートさを兼ね備えた “共感派リアリスト” タイプ</p>
+        <p style="text-align:center; font-size:18px;"> あなたは、やさしさとスマートさを兼ね備えた “共感派リアリスト” タイプ</p>
+        <div style="text-align:left; font-size:18px; width: 100vw; margin:auto;">
         <br>
         <h5>◆ あなたの特徴：</h5>
         <p>　笑いに求めるのは、「誰かを笑う」ことではなく、「一緒に笑える」こと。</p>
@@ -206,12 +206,12 @@ def diagnosis_sentences(diagnosis_type):
         <p>　どこか心が温まるような、やさしいオチやツッコミ</p>
         <br>
         <h5>◆ あなたにぴったりの芸人は：</h5>
-        <p>　サンドウィッチマン</p>
-        <p>　┗ 優しくてわかりやすいネタに、鋭いセンスが光る王道。</p>
-        <p>　オードリー（若林・春日）</p>
-        <p>　┗ 春日の突飛さと若林の知的で共感的なツッコミのバランスが◎。</p>
-        <p>　ナイツ</p>
-        <p>　┗ 洗練された言葉遊びで、軽妙に日常を切り取る名人芸。</p>
+        <p>　サンドウィッチマン<br>
+           　┗ 優しくてわかりやすいネタに、鋭いセンスが光る王道。</p>
+        <p>　オードリー（若林・春日）<br>
+           　┗ 春日の突飛さと若林の知的で共感的なツッコミのバランスが◎。</p>
+        <p>　ナイツ<br>
+           　┗ 洗練された言葉遊びで、軽妙に日常を切り取る名人芸。</p>
         <br>
         <h5>◆ ひとこと診断：</h5>
         <p>　「あなたにとって笑いとは、“人と人との距離をそっと縮める橋”。</p>
@@ -220,8 +220,8 @@ def diagnosis_sentences(diagnosis_type):
         """
     elif diagnosis_type == "WRS":
         return """
-        <div style="text-align:left; font-size:18px; color:#dddddd; max-width:700px; margin:auto;">
-        <p style="text-align:center;"> あなたは、カオスの中にやさしさを見出す “癒し系トリックスター” タイプ</p>
+        <p style="text-align:center; font-size:18px;"> あなたは、カオスの中にやさしさを見出す “癒し系トリックスター” タイプ</p>
+        <div style="text-align:left; font-size:18px; width: 100vw; margin:auto;">
         <h5>◆ あなたの特徴：</h5>
         <p>　他人を傷つける笑いは苦手。でも“ちょっとヘンな世界”にはワクワクする。</p>
         <p>　リアクション芸の楽しさと、ナンセンスな不条理の世界観の両方に惹かれるタイプ。</p>
@@ -234,12 +234,12 @@ def diagnosis_sentences(diagnosis_type):
         <p>　そして何より、「誰も傷つけず、みんなで笑える」世界観</p>
         <br>
         <h5>◆ あなたにぴったりの芸人は：</h5>
-        <p>　ロバート（秋山竜次）</p>
-        <p>　┗ 独特の世界観と無害なシュールさ＋圧倒的演技力のリアクション。</p>
-        <p>　東京03（角田）</p>
-        <p>　┗ リアクションに味があり、空気感のズレを丁寧に演じるシュールな設定も多い。</p>
-        <p>　コント赤信号（ラサール石井）</p>
-        <p>　┗ 古典的なリアクションと、やさしく包み込むような笑いの先駆け。</p>
+        <p>　ロバート（秋山竜次）<br>
+           　┗ 独特の世界観と無害なシュールさ＋圧倒的演技力のリアクション。</p>
+        <p>　東京03（角田）<br>
+           　┗ リアクションに味があり、空気感のズレを丁寧に演じるシュールな設定も多い。</p>
+        <p>　コント赤信号（ラサール石井）<br>
+           　┗ 古典的なリアクションと、やさしく包み込むような笑いの先駆け。</p>
         <br>
         <h5>◆ ひとこと診断：</h5>
         <p>　「あなたにとって笑いとは、“混沌の中にある無垢”。</p>
@@ -248,8 +248,8 @@ def diagnosis_sentences(diagnosis_type):
         """
     else:
         return """
-        <div style="text-align:left; font-size:18px; color:#dddddd; max-width:700px; margin:auto;">
-        <p style="text-align:center;"> あなたは、ピュアに笑いを届けたい “陽気な共感エンターテイナー” タイプ</p>
+        <p style="text-align:center; font-size:18px;"> あなたは、ピュアに笑いを届けたい “陽気な共感エンターテイナー” タイプ</p>
+        <div style="text-align:left; font-size:18px; width: 100vw; margin:auto;">
         <br>
         <h5>◆ あなたの特徴：</h5>
         <p>　難しい理屈や毒はいらない。</p>
@@ -263,12 +263,12 @@ def diagnosis_sentences(diagnosis_type):
         <p>　オーバーな動きや声のトーンで笑わせてくれる「リアクション芸」</p>
         <br>
         <h5>◆ あなたにぴったりの芸人は：</h5>
-        <p>　サンドウィッチマン</p>
-        <p>　┗ わかりやすい構成と優しさ、テンポの良いツッコミが心地よい。</p>
-        <p>　チョコレートプラネット</p>
-        <p>　┗ キャラ芸×リアクション×王道のボケツッコミのバランスが絶妙。</p>
-        <p>　フットボールアワー（後藤）</p>
-        <p>　┗ ストレートなツッコミと明るさで、場をふわっと盛り上げる名人芸。</p>
+        <p>　サンドウィッチマン<br>
+           　┗ わかりやすい構成と優しさ、テンポの良いツッコミが心地よい。</p>
+        <p>　チョコレートプラネット<br>
+           　┗ キャラ芸×リアクション×王道のボケツッコミのバランスが絶妙。</p>
+        <p>　フットボールアワー（後藤）<br>
+           　┗ ストレートなツッコミと明るさで、場をふわっと盛り上げる名人芸。</p>
         <br>
         <h5>◆ ひとこと診断：</h5>
         <p>　「あなたにとって笑いとは、“誰かと今を楽しむための魔法”。</p>
