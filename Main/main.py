@@ -3,6 +3,7 @@ from streamlit_lottie import st_lottie
 from features.random_selection import shuffled_selection_values
 from features.result import result, diagnosis_based_on_result, diagnosis_type, diagnosis_sentences
 import requests
+import random
 
 def load_lottieurl(url):
     r = requests.get(url)
@@ -60,8 +61,14 @@ def show_question_select():
         </div>
         """, unsafe_allow_html=True)
 
-        left_label = data['options'][0]
-        right_label = data['options'][1]
+        if random.choice([True, False]):
+            left_label = data['options'][1]
+            right_label = data['options'][0]
+            scores = [1, 0.7, -0.7, -1]
+        else:
+            left_label = data['options'][0]
+            right_label = data['options'][1]
+            scores = [-1, -0.7, 0.7, 1]
 
         col1, col2, col3 = st.columns([1, 2, 1])
 
@@ -70,7 +77,6 @@ def show_question_select():
 
         with col2:
             cols = st.columns(4)
-            scores = [-1, -0.7, 0.7, 1]
             for i, col in enumerate(cols):
                 with col:
                     if st.button("●", key=f"choice_{current}_{i}"):
@@ -80,6 +86,7 @@ def show_question_select():
 
         with col3:
             st.markdown(f"<p style='text-align:center; font-size:18px; color:#4BA3FF;'>{right_label}</p>", unsafe_allow_html=True)
+
     else:
         st.markdown("全て回答しました")
         if st.button("結果を診断する"):
@@ -100,6 +107,23 @@ def show_result():
     st.markdown(f"<h3 style='text-align: center; color: #ffffff;'>{diagnosis_val}</h3>", unsafe_allow_html=True)
     st.markdown(diagnosis_sentence, unsafe_allow_html=True)
 
+    st.markdown("---")
+    
+    col1, col2, _ = st.columns([1,1,1])
+    with col1:
+        if st.button("🏠 スタート画面に戻る"):
+            for k in ['questions', 'question_keys', 'current_q_idx', 'answers']:
+                if k in st.session_state:
+                    del st.session_state[k]
+            st.session_state.page = 'top'
+            st.rerun()
+    with col2:
+        if st.button("🔄 もう一度診断する"):
+            for k in ['questions', 'question_keys', 'current_q_idx', 'answers']:
+                if k in st.session_state:
+                    del st.session_state[k]
+            st.session_state.page = 'question_select'
+            st.rerun()
 
 # ページ遷移管理
 if st.session_state.page == 'top':
