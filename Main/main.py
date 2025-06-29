@@ -4,6 +4,7 @@ from features.random_selection import shuffled_selection_values
 from features.result import result, diagnosis_based_on_result, diagnosis_type, diagnosis_sentences
 import requests
 import random
+import time
 
 def load_lottieurl(url):
     r = requests.get(url)
@@ -90,8 +91,14 @@ def show_question_select():
     else:
         st.markdown("全て回答しました")
         if st.button("結果を診断する"):
-            st.session_state.page = 'result'
+            st.session_state.page = 'loading'
             rerun()
+
+def show_loading():
+    with st.spinner('診断中です...'):
+        time.sleep(3)
+    st.session_state.page = 'result'
+    rerun()
 
 
 def show_result():
@@ -130,5 +137,7 @@ if st.session_state.page == 'top':
     show_top()
 elif st.session_state.page == 'question_select':
     show_question_select()
+elif st.session_state.page == 'loading':
+    show_loading()
 elif st.session_state.page == 'result':
     show_result()
