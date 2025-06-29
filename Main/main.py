@@ -5,6 +5,7 @@ from features.result import result, diagnosis_based_on_result, diagnosis_type, d
 import requests
 import random
 import time
+from features.home_logo import render_home_logo
 
 def load_lottieurl(url):
     r = requests.get(url)
@@ -16,6 +17,8 @@ def rerun():
     st.rerun()
 
 st.set_page_config(page_title="お笑い感性診断", page_icon="🎤", layout="centered")
+
+render_home_logo()
 
 if 'page' not in st.session_state:
     st.session_state.page = 'top'
