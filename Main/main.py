@@ -87,7 +87,22 @@ def show_question_select():
     else:
         st.markdown("全て回答しました")
         if st.button("結果を診断する"):
-            st.write(st.session_state.answers)
+            st.session_state.page = 'result'
+            rerun()
+
+def show_result():
+    st.markdown("<h1 style='text-align: center; color: #FF4B4B;'>診断結果</h1>", unsafe_allow_html=True)
+
+    result_dict = st.session_state.answers
+    result_val = result(result_dict)
+    diagnosis_result = diagnosis_based_on_result(result_val)
+    diagnosis_val = diagnosis_type(diagnosis_result)
+    diagnosis_sentence = diagnosis_sentences(diagnosis_val)
+
+    st.markdown(f"<p style='text-align: center; font-size:18px; color: #ffffff;'>あなたのタイプは...</p>", unsafe_allow_html=True)
+    st.markdown(f"<h3 style='text-align: center; color: #ffffff;'>{diagnosis_val}</h3>", unsafe_allow_html=True)
+    st.markdown(diagnosis_sentence, unsafe_allow_html=True)
+
 
 # ページ遷移管理
 if st.session_state.page == 'top':
