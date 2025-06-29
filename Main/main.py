@@ -95,10 +95,41 @@ def show_question_select():
             rerun()
 
 def show_loading():
-    with st.spinner('診断中です...'):
-        time.sleep(3)
-    st.session_state.page = 'result'
-    rerun()
+        spinner_html = """
+        <div style="display: flex; justify-content: center; align-items: center; height: 80vh;">
+        <div style="text-align: center;">
+            <div style="
+            border: 16px solid #f3f3f3;
+            border-top: 16px solid #3498db;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            animation: spin 2s linear infinite;
+            margin: auto;
+            "></div>
+            <p style="margin-top: 20px; font-size: 24px;">診断中...</p>
+        </div>
+        </div>
+
+        <style>
+        @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+        }
+        </style>
+        """
+
+        # スピナーを表示
+        placeholder = st.empty()
+        placeholder.markdown(spinner_html, unsafe_allow_html=True)
+
+        # 擬似的な処理時間
+        time.sleep(5)
+
+        # 処理完了後にスピナーを消して別の内容を表示
+        placeholder.empty()
+        st.session_state.page = 'result'
+        rerun()
 
 
 def show_result():
