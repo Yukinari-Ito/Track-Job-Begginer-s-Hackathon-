@@ -38,8 +38,43 @@ def show_top():
     st.markdown("---")
 
     if st.button("🎬 診断スタート！"):
-        st.session_state.page = 'question_select'
+        st.session_state.page = 'example'
         rerun()
+
+
+def show_example():
+    st.markdown("## 例題 (ウォーミングアップ)")
+    st.markdown("""
+    <div style="text-align:center; font-size:22px; font-weight:bold; margin:30px 0;">
+    好きなのは？
+    </div>
+    """, unsafe_allow_html=True)
+
+    left_label = "夏"
+    right_label = "冬"
+
+    col1, col2, col3 = st.columns([1, 2, 1])
+
+    with col1:
+        st.markdown(f"<p style='text-align:center; font-size:18px; color:#FF4B4B;'>{left_label}</p>", unsafe_allow_html=True)
+
+    with col2:
+        cols = st.columns(4)
+        for i, col in enumerate(cols):
+            with col:
+                if st.button("●", key=f"example_choice_{i}"):
+                    st.session_state.page = 'question_select'
+                    # 診断初期化
+                    st.session_state.questions = shuffled_selection_values()
+                    st.session_state.question_keys = list(st.session_state.questions.keys())
+                    st.session_state.current_q_idx = 0
+                    st.session_state.answers = {}
+                    rerun()
+
+    with col3:
+        st.markdown(f"<p style='text-align:center; font-size:18px; color:#4BA3FF;'>{right_label}</p>", unsafe_allow_html=True)
+
+
 
 def show_question_select():
     if 'questions' not in st.session_state:
@@ -51,11 +86,21 @@ def show_question_select():
     total_questions = 15
     current = st.session_state.current_q_idx
 
+    display_idx = min(current + 1, total_questions)
+    st.markdown(f"## 質問 {display_idx} / {total_questions}")
+
+    progress_ratio = display_idx / total_questions
+    progress_html = f"""
+    <div style='width:100%; background:#e0e0e0; height:20px; border-radius:10px;'>
+        <div style='width:{progress_ratio*100}%; background:#FF4B4B; height:20px; border-radius:10px;'></div>
+    </div>
+    """
+    st.markdown(progress_html, unsafe_allow_html=True)
+
     if current < total_questions:
         key = st.session_state.question_keys[current]
         data = st.session_state.questions[key]
 
-        st.markdown(f"## 質問 {current + 1} / {total_questions}")
         st.markdown(f"""
         <div style="text-align:center; font-size:22px; font-weight:bold; margin:30px 0;">
         {data['question']}
@@ -166,6 +211,8 @@ def show_result():
 # ページ遷移管理
 if st.session_state.page == 'top':
     show_top()
+elif st.session_state.page == 'example':
+    show_example()
 elif st.session_state.page == 'question_select':
     show_question_select()
 elif st.session_state.page == 'loading':
