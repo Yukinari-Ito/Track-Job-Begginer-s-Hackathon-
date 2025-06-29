@@ -3,9 +3,6 @@ from streamlit_lottie import st_lottie
 from features.random_selection import shuffled_selection_values
 import requests
 
-from streamlit.runtime.scriptrunner.script_runner import RerunException
-from streamlit.runtime.scriptrunner import add_script_run_ctx
-
 def load_lottieurl(url):
     r = requests.get(url)
     if r.status_code != 200:
@@ -13,11 +10,10 @@ def load_lottieurl(url):
     return r.json()
 
 def rerun():
-    raise RerunException(add_script_run_ctx())
+    st.rerun()
 
 st.set_page_config(page_title="お笑い感性診断", page_icon="🎤", layout="centered")
 
-# 初期ページ設定
 if 'page' not in st.session_state:
     st.session_state.page = 'top'
 
@@ -57,7 +53,6 @@ def show_question_select():
         data = st.session_state.questions[key]
 
         st.markdown(f"## 質問 {current + 1} / {total_questions}")
-
         st.markdown(f"""
         <div style="text-align:center; font-size:22px; font-weight:bold; margin:30px 0;">
         {data['question']}
@@ -77,7 +72,7 @@ def show_question_select():
             scores = [-1, -0.7, 0.7, 1]
             for i, col in enumerate(cols):
                 with col:
-                    if st.button("●", key=f"choice_{i}"):
+                    if st.button("●", key=f"choice_{current}_{i}"):
                         st.session_state.answers[key] = scores[i]
                         st.session_state.current_q_idx += 1
                         rerun()
@@ -89,6 +84,7 @@ def show_question_select():
         if st.button("結果を診断する"):
             st.session_state.page = 'result'
             rerun()
+
 
 def show_result():
     st.markdown("<h1 style='text-align: center; color: #FF4B4B;'>診断結果</h1>", unsafe_allow_html=True)
