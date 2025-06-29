@@ -1,6 +1,7 @@
 import streamlit as st
 from streamlit_lottie import st_lottie
 from features.random_selection import shuffled_selection_values
+from features.result import result, diagnosis_based_on_result, diagnosis_type, diagnosis_sentences
 import requests
 
 def load_lottieurl(url):
@@ -105,3 +106,5 @@ if st.session_state.page == 'top':
     show_top()
 elif st.session_state.page == 'question_select':
     show_question_select()
+elif st.session_state.page == 'result':
+    show_result()
