@@ -25,7 +25,7 @@ def show_top():
         st_lottie(lottie_animation, speed=1, height=200, key="explosion")
 
     st.markdown("""
-    <div style="text-align:center; font-size:18px; color:#333333; max-width:700px; margin:auto;">
+    <div style="text-align:center; font-size:18px; max-width:700px; margin:auto;">
     <p>全15問の質問に答えるだけで、あなたのお笑い感性が丸わかり！</p>
     <p>普段あなたが面白いと感じることには、ある共通点が…？</p>
     <p>共通のお笑い感性を持つ友達を作ろう！</p>
@@ -96,8 +96,8 @@ def show_result():
     diagnosis_val = diagnosis_type(diagnosis_result)
     diagnosis_sentence = diagnosis_sentences(diagnosis_val)
 
-    st.markdown(f"<p style='text-align: center; font-size:18px; color: #ffffff;'>あなたのタイプは...</p>", unsafe_allow_html=True)
-    st.markdown(f"<h3 style='text-align: center; color: #ffffff;'>{diagnosis_val}</h3>", unsafe_allow_html=True)
+    st.markdown(f"<p style='text-align: center; font-size:18px;'>あなたのタイプは...</p>", unsafe_allow_html=True)
+    st.markdown(f"<h3 style='text-align: center;'>{diagnosis_val}</h3>", unsafe_allow_html=True)
     st.markdown(diagnosis_sentence, unsafe_allow_html=True)
 
 
